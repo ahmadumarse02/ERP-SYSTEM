@@ -14,5 +14,3 @@ function page() {
 }
 
 export default page;
-
-export const dynamic = 'force-static'

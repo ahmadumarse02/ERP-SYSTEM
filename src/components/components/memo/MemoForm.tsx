@@ -55,7 +55,7 @@ export function MemoForm() {
     const result = await createMemo(data);
     if (result.success) {
       if (result.memo) {
-        router.push(`/memos`);
+        router.push(`/memo`);
       }
     }
   }
