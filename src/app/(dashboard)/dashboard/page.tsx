@@ -23,5 +23,3 @@ export default async function DashboardPage() {
     </div>
   );
 }
-
-export const dynamic = 'force-static'
