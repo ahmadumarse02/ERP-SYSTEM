@@ -1,0 +1,165 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Staff {
+  id            String   @id @default(cuid())
+  firstName     String
+  lastName      String
+  email         String
+  phone         String
+  gender        String
+  role          String
+  designation   String
+  officialEmail String?
+  staffId       String?
+  imageUrl      String?
+  createdAt     DateTime @default(now())
+}
+
+model PaymentVoucher {
+  id         String   @id @default(uuid())
+  subject    String
+  Date       DateTime @default(now())
+  preparedBy String
+  sendTo     String
+  createdAt  DateTime @default(now())
+}
+
+model Memo {
+  id             String   @id @default(cuid())
+  title          String
+  sentFrom       String
+  sentTo         String
+  action         String
+  date           DateTime
+  hasAttachment  Boolean
+  attachmentType String?
+  body           String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Circulars {
+  id         String   @id @default(uuid())
+  subject    String
+  Date       DateTime @default(now())
+  preparedBy String
+  sendTo     String
+  message    String
+  createdAt  DateTime @default(now())
+}
+
+model Maintenance {
+  id              String            @id @default(uuid())
+  itemName        String
+  maintenanceType String
+  frequencyType   String
+  recurringOption String?
+  scheduledDate   DateTime
+  status          MaintenanceStatus @default(PENDING)
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  equipmentId     String?
+  equipment       Equipment?        @relation(fields: [equipmentId], references: [id])
+}
+
+model Equipment {
+  id          String        @id @default(uuid())
+  name        String
+  type        String
+  maintenance Maintenance[]
+}
+
+model LogisticsRequest {
+  id             String        @id @default(uuid())
+  title          String
+  requestedBy    String
+  dateFrom       DateTime
+  dateTo         DateTime
+  paymentVoucher String?
+  purpose        String
+  sentTo         String
+  amount         Float
+  status         RequestStatus @default(PENDING)
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+}
+
+model Budget {
+  id              String   @id @default(cuid())
+  budgetNumber    String   @unique
+  description     String
+  date            DateTime
+  receivingOffice String
+  budgetedAmount  Float
+  actualAmount    Float?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Stock {
+  id           String      @id @default(uuid())
+  image        String?
+  productName  String
+  productId    String
+  category     String
+  qtyPurchased Int
+  unitPrice    Float
+  totalAmount  Float
+  inStock      Int
+  supplier     String
+  status       StockStatus
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+}
+
+model CapacityBuilding {
+  id           Int      @id @default(autoincrement())
+  description  String
+  trainingDate DateTime
+  type         String
+  mode         String
+  duration     String
+  staffIds     String
+  status       String?  @default("todo")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Procurements {
+  id         String   @id @default(uuid())
+  itemName   String
+  quantity   Int
+  data       DateTime
+  unitPrice  Float
+  totalPrice Float
+  requestBy  String
+  sentTo     String
+  status     String   @default("PENDING")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+enum MaintenanceStatus {
+  PENDING
+  COMPLETED
+  OVERDUE
+}
+
+enum RequestStatus {
+  PENDING
+  APPROVED
+  CANCELLED
+}
+
+enum StockStatus {
+  IN_STOCK
+  LOW_STOCK
+  OUT_OF_STOCK
+}
