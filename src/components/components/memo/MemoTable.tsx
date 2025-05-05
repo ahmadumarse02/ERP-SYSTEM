@@ -87,3 +87,5 @@ export function MemoTable() {
     </div>
   );
 }
+
+export const revalidate = 0;

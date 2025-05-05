@@ -79,3 +79,5 @@ export default async function CapacityBuildingTable() {
     </div>
   );
 }
+
+export const revalidate = 0;

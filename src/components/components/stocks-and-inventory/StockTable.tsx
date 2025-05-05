@@ -107,3 +107,5 @@ export default async function StockTable() {
     </div>
   );
 }
+
+export const revalidate = 0;

@@ -80,3 +80,5 @@ export function PaymentVoucherTable() {
     </div>
   );
 }
+
+export const revalidate = 0;

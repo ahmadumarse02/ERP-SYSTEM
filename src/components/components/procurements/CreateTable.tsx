@@ -74,3 +74,5 @@ export default async function ProcurementsTable() {
     </div>
   );
 }
+
+export const revalidate = 0;

@@ -91,3 +91,5 @@ function StatCard({
     </Card>
   );
 }
+
+export const revalidate = 0;

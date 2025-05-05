@@ -91,3 +91,5 @@ export function BudgetTable() {
     </div>
   );
 }
+
+export const revalidate = 0;

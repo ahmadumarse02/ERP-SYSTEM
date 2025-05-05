@@ -47,3 +47,5 @@ export default async function CircularsTable() {
     </div>
   );
 }
+
+export const revalidate = 0;

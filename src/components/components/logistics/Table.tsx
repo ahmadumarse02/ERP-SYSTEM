@@ -84,3 +84,5 @@ export default async function LogisticsTable() {
     </div>
   );
 }
+
+export const revalidate = 0;
