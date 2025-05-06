@@ -12,7 +12,9 @@ export function BudgetHeader() {
           <h1 className="text-2xl font-bold">Create a Budget</h1>
         </div>
         <Link href="/office-budget/add">
-          <Button className="bg-gradient h-[46px] w-full max-w-[180px]">Add New budget</Button>
+          <Button className="bg-gradient h-[46px] w-full max-w-[180px]">
+            Add New budget
+          </Button>
         </Link>
       </CardContent>
     </Card>

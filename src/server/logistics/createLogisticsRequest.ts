@@ -1,7 +1,10 @@
 "use server";
 
 import prisma from "@/lib/prisma";
-import { logisticsRequestSchema, LogisticsRequestSchema } from "@/types/logistics/logisticsSchema";
+import {
+  logisticsRequestSchema,
+  LogisticsRequestSchema,
+} from "@/types/logistics/logisticsSchema";
 
 export async function createLogisticsRequest(data: LogisticsRequestSchema) {
   const result = logisticsRequestSchema.safeParse(data);

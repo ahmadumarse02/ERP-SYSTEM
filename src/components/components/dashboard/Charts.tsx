@@ -19,22 +19,22 @@ export type LogisticsStats = {
 function LogisticsChart({ stats }: { stats?: LogisticsStats }) {
   if (!stats) {
     return (
-      <div className="bg-white p-6 rounded-xl shadow-md flex justify-center items-center w-full max-w-3xl mx-auto h-[300px]">
+      <div className="mx-auto flex h-[300px] w-full max-w-3xl items-center justify-center rounded-xl bg-white p-6 shadow-md">
         <p>Loading statistics...</p>
       </div>
     );
   }
 
   return (
-    <div className="bg-white h-[327px] p-6 rounded-xl shadow-md flex justify-between items-center w-full max-w-3xl mx-auto">
+    <div className="mx-auto flex h-[327px] w-full max-w-3xl items-center justify-between rounded-xl bg-white p-6 shadow-md">
       <div>
-        <h2 className="text-xl font-semibold mb-2">Logistics Requests</h2>
-        <p className="font-bold text-lg">{stats.total} Total Requests</p>
+        <h2 className="mb-2 text-xl font-semibold">Logistics Requests</h2>
+        <p className="text-lg font-bold">{stats.total} Total Requests</p>
         <ul className="mt-4 space-y-1">
           {stats.data.map((item) => (
             <li key={item.name} className="flex items-center gap-2">
               <span
-                className="inline-block w-3 h-3 rounded-full"
+                className="inline-block h-3 w-3 rounded-full"
                 style={{ backgroundColor: COLORS[item.name] }}
               />
               <span className="font-medium">{item.value}</span> {item.name}

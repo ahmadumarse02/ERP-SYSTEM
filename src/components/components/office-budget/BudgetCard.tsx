@@ -48,8 +48,12 @@ export function BudgetCards() {
       <div className="rounded-lg border bg-white p-6 shadow-sm">
         <div className="flex items-center justify-between gap-1">
           <div>
-            <p className="mt-1 text-2xl font-bold">#{formatNumber(summary.totalBudgeted)}</p>
-            <p className="text-sm font-medium text-gray-500">Total annual budget</p>
+            <p className="mt-1 text-2xl font-bold">
+              #{formatNumber(summary.totalBudgeted)}
+            </p>
+            <p className="text-sm font-medium text-gray-500">
+              Total annual budget
+            </p>
           </div>
           <div className="rounded-full bg-blue-500/10 p-3 text-blue-700/40">
             <DollarSign className="h-6 w-6" />
@@ -64,8 +68,12 @@ export function BudgetCards() {
       <div className="rounded-lg border bg-white p-6 shadow-sm">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-medium text-gray-500">Amount used, YTD</p>
-            <p className="mt-1 text-2xl font-bold">#{formatNumber(summary.totalActual)}</p>
+            <p className="text-sm font-medium text-gray-500">
+              Amount used, YTD
+            </p>
+            <p className="mt-1 text-2xl font-bold">
+              #{formatNumber(summary.totalActual)}
+            </p>
           </div>
           <div className="rounded-full bg-orange-500/10 p-3 text-orange-700/40">
             <DollarSign className="h-6 w-6" />
@@ -76,8 +84,12 @@ export function BudgetCards() {
       <div className="rounded-lg border bg-white p-6 shadow-sm">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-medium text-gray-500">Total budget balance</p>
-            <p className="mt-1 text-2xl font-bold">{formatNumber(summary.variance)}</p>
+            <p className="text-sm font-medium text-gray-500">
+              Total budget balance
+            </p>
+            <p className="mt-1 text-2xl font-bold">
+              {formatNumber(summary.variance)}
+            </p>
           </div>
           <div className="bg-purple-500-500/10 text-purple-700-700/40 rounded-full p-3">
             <DollarSign className="h-6 w-6" />
@@ -89,7 +101,9 @@ export function BudgetCards() {
         <div className="flex items-center justify-between">
           <div>
             <p className="text-sm font-medium text-gray-500">Budget % used</p>
-            <p className="mt-1 text-2xl font-bold">{summary.percentageUsed.toFixed(0)}%</p>
+            <p className="mt-1 text-2xl font-bold">
+              {summary.percentageUsed.toFixed(0)}%
+            </p>
           </div>
           <div className="text-green-700-700/40 rounded-full bg-green-500/10 p-3">
             <DollarSign className="h-6 w-6" />

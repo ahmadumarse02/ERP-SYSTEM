@@ -2,13 +2,19 @@
 
 import prisma from "@/lib/prisma";
 
-import { circularSchema, CircularSchema } from "@/types/circulars/circularsSchema";
+import {
+  circularSchema,
+  CircularSchema,
+} from "@/types/circulars/circularsSchema";
 
 export async function CreateCircular(data: CircularSchema) {
   const result = circularSchema.safeParse(data);
 
   if (!result.success) {
-    return { error: "Failed to create circulars", details: result.error.format() };
+    return {
+      error: "Failed to create circulars",
+      details: result.error.format(),
+    };
   }
 
   try {

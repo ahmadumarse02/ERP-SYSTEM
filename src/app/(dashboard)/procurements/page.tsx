@@ -6,7 +6,10 @@ import ProcurementsCard from "@/components/components/procurements/Header";
 function page() {
   return (
     <>
-      <Header title="Procurement" description="Request for, and view all requested procurements." />
+      <Header
+        title="Procurement"
+        description="Request for, and view all requested procurements."
+      />
       <ProcurementsCard />
       <ProcurementsTable />;
     </>

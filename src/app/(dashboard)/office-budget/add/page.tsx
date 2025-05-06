@@ -8,7 +8,10 @@ import React from "react";
 function page() {
   return (
     <>
-      <Header title="Create Budget" description="Create and send budget request." />
+      <Header
+        title="Create Budget"
+        description="Create and send budget request."
+      />
       <Button variant="link" className="mb-10 text-blue-500">
         <Link href="/office-budget" className="flex items-center gap-2">
           <ArrowLeft className="size-4" />

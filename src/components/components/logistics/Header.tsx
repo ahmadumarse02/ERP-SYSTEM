@@ -12,7 +12,9 @@ export function LogisticsCard() {
           <h1 className="text-2xl font-bold">Logistics request</h1>
         </div>
         <Link href="/logistics/add">
-          <Button className="bg-gradient h-[46px] w-full max-w-[180px]">Add Logistics</Button>
+          <Button className="bg-gradient h-[46px] w-full max-w-[180px]">
+            Add Logistics
+          </Button>
         </Link>
       </CardContent>
     </Card>

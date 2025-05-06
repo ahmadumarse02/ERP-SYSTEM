@@ -10,7 +10,13 @@ interface StatsCardProps {
   icon?: React.ReactNode;
 }
 
-export function StatsCard({ title, value, change, changeText, icon }: StatsCardProps) {
+export function StatsCard({
+  title,
+  value,
+  change,
+  changeText,
+  icon,
+}: StatsCardProps) {
   const isPositive = change && change > 0;
   const hasChange = change !== undefined;
 

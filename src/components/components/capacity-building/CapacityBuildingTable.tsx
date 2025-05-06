@@ -38,15 +38,23 @@ export default async function CapacityBuildingTable() {
           {capacityBuildingData.map((training, i) => (
             <TableRow key={i}>
               <TableCell>{i + 1}</TableCell>
-              <TableCell className="max-w-[300px] truncate">{training.description}</TableCell>
+              <TableCell className="max-w-[300px] truncate">
+                {training.description}
+              </TableCell>
               <TableCell>
                 <Badge variant="outline" className="capitalize">
                   {training.type.replace("-", " ")}
                 </Badge>
               </TableCell>
-              <TableCell className="capitalize">{training.mode.replace("-", " ")}</TableCell>
-              <TableCell className="capitalize">{training.duration.replace("-", " ")}</TableCell>
-              <TableCell>{training.trainingDate.toLocaleDateString()}</TableCell>
+              <TableCell className="capitalize">
+                {training.mode.replace("-", " ")}
+              </TableCell>
+              <TableCell className="capitalize">
+                {training.duration.replace("-", " ")}
+              </TableCell>
+              <TableCell>
+                {training.trainingDate.toLocaleDateString()}
+              </TableCell>
               <TableCell>
                 <Badge
                   variant={
@@ -71,7 +79,9 @@ export default async function CapacityBuildingTable() {
                   {training.status ? training.status.replace("_", " ") : ""}
                 </Badge>
               </TableCell>
-              <TableCell className="max-w-[150px] truncate">{training.staffIds}</TableCell>
+              <TableCell className="max-w-[150px] truncate">
+                {training.staffIds}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

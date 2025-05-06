@@ -2,7 +2,10 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { BudgetFormSchema, BudgetFormValues } from "@/types/office-budget/budgetSchema";
+import {
+  BudgetFormSchema,
+  BudgetFormValues,
+} from "@/types/office-budget/budgetSchema";
 import { createBudget } from "@/server/office-budget/createBudget";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -24,7 +27,11 @@ import {
 } from "@/components/ui/select";
 import { Calendar } from "@/components/ui/calendar";
 import { CalendarIcon } from "lucide-react";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { format } from "date-fns";
 import { Card } from "@/components/ui/card";
 import SubmitedButton from "@/components/shared/SubmitedButton";
@@ -54,7 +61,9 @@ export function BudgetForm() {
     <Card className="p-10">
       <div className="">
         <h2 className="text-xl font-semibold">Create Budget</h2>
-        <p className="text-sm text-gray-500">Kindly fill in the form below to create a budget</p>
+        <p className="text-sm text-gray-500">
+          Kindly fill in the form below to create a budget
+        </p>
       </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -82,7 +91,10 @@ export function BudgetForm() {
                   <Popover>
                     <PopoverTrigger asChild>
                       <FormControl>
-                        <Button variant={"outline"} className="pl-3 text-left font-normal">
+                        <Button
+                          variant={"outline"}
+                          className="pl-3 text-left font-normal"
+                        >
                           {field.value ? (
                             format(field.value, "dd/MM/yyyy")
                           ) : (
@@ -97,7 +109,9 @@ export function BudgetForm() {
                         mode="single"
                         selected={field.value}
                         onSelect={field.onChange}
-                        disabled={(date) => date > new Date() || date < new Date("1900-01-01")}
+                        disabled={(date) =>
+                          date > new Date() || date < new Date("1900-01-01")
+                        }
                         initialFocus
                       />
                     </PopoverContent>
@@ -127,7 +141,10 @@ export function BudgetForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Receiving office</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue placeholder="Select option" />
@@ -157,7 +174,9 @@ export function BudgetForm() {
                       type="number"
                       placeholder="Enter amount"
                       {...field}
-                      onChange={(e) => field.onChange(parseFloat(e.target.value))}
+                      onChange={(e) =>
+                        field.onChange(parseFloat(e.target.value))
+                      }
                     />
                   </FormControl>
                   <FormMessage />
@@ -165,7 +184,10 @@ export function BudgetForm() {
               )}
             />
           </div>
-          <SubmitedButton text="Create Budget" className="bg-gradient mt-6 w-full max-w-40" />
+          <SubmitedButton
+            text="Create Budget"
+            className="bg-gradient mt-6 w-full max-w-40"
+          />
         </form>
       </Form>
     </Card>

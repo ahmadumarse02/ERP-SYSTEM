@@ -25,7 +25,11 @@ import {
 } from "@/components/ui/select";
 import { Calendar } from "@/components/ui/calendar";
 import { CalendarIcon } from "lucide-react";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { format } from "date-fns";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
@@ -99,7 +103,10 @@ export function MemoForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Sent To</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue placeholder="Select option" />
@@ -124,7 +131,10 @@ export function MemoForm() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Action</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
                   <FormControl>
                     <SelectTrigger>
                       <SelectValue placeholder="Select option" />
@@ -152,8 +162,15 @@ export function MemoForm() {
                   <Popover>
                     <PopoverTrigger asChild>
                       <FormControl>
-                        <Button variant={"outline"} className="pl-3 text-left font-normal">
-                          {field.value ? format(field.value, "PPP") : <span>Pick a date</span>}
+                        <Button
+                          variant={"outline"}
+                          className="pl-3 text-left font-normal"
+                        >
+                          {field.value ? (
+                            format(field.value, "PPP")
+                          ) : (
+                            <span>Pick a date</span>
+                          )}
                           <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                         </Button>
                       </FormControl>
@@ -163,7 +180,9 @@ export function MemoForm() {
                         mode="single"
                         selected={field.value}
                         onSelect={field.onChange}
-                        disabled={(date) => date > new Date() || date < new Date("1900-01-01")}
+                        disabled={(date) =>
+                          date > new Date() || date < new Date("1900-01-01")
+                        }
                         initialFocus
                       />
                     </PopoverContent>
@@ -180,7 +199,10 @@ export function MemoForm() {
                 <FormItem className="flex flex-col">
                   <FormLabel>Add Attachment?</FormLabel>
                   <FormControl>
-                    <Switch checked={field.value} onCheckedChange={field.onChange} />
+                    <Switch
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -194,14 +216,19 @@ export function MemoForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Attachment Type</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
                       <FormControl>
                         <SelectTrigger className="w-full">
                           <SelectValue placeholder="Select type" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="Payment Voucher">Payment Voucher</SelectItem>
+                        <SelectItem value="Payment Voucher">
+                          Payment Voucher
+                        </SelectItem>
                         <SelectItem value="Invoice">Invoice</SelectItem>
                         <SelectItem value="Contract">Contract</SelectItem>
                         <SelectItem value="Report">Report</SelectItem>
@@ -221,7 +248,11 @@ export function MemoForm() {
               <FormItem>
                 <FormLabel>Memo Body</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="Enter subject" className="min-h-[200px]" {...field} />
+                  <Textarea
+                    placeholder="Enter subject"
+                    className="min-h-[200px]"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -229,7 +260,11 @@ export function MemoForm() {
           />
 
           <div className="flex justify-between">
-            <Button type="button" variant="outline" onClick={() => router.back()}>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => router.back()}
+            >
               Cancel
             </Button>
             <SubmitedButton text="Create Memo" className="bg-gradient" />

@@ -8,7 +8,10 @@ import Header from "@/components/layout/Header";
 function NotificationPage() {
   return (
     <>
-      <Header title="Notifications" description="Read and delete notifications." />
+      <Header
+        title="Notifications"
+        description="Read and delete notifications."
+      />
       <div className="mx-auto rounded-lg bg-white p-6 shadow-sm">
         <div className="mb-8">
           <h2 className="mb-4 text-lg font-semibold">Today</h2>
@@ -68,7 +71,9 @@ function NotificationPage() {
 
         {/* Yesterday's Activities */}
         <div className="mb-8">
-          <h2 className="mb-4 text-lg font-semibold">Yesterday 18th November, 2022</h2>
+          <h2 className="mb-4 text-lg font-semibold">
+            Yesterday 18th November, 2022
+          </h2>
           <div className="space-y-4">
             {/* Activity Item 5 */}
             <div className="flex items-start gap-3 rounded p-3 hover:bg-gray-50">
@@ -111,7 +116,10 @@ function NotificationPage() {
         {/* Select All */}
         <div className="mt-4 flex items-center gap-2">
           <Checkbox id="select-all" />
-          <label htmlFor="select-all" className="cursor-pointer text-sm text-gray-600">
+          <label
+            htmlFor="select-all"
+            className="cursor-pointer text-sm text-gray-600"
+          >
             Select all
           </label>
         </div>

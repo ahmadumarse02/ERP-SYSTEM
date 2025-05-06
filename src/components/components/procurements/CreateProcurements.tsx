@@ -68,7 +68,9 @@ export default function CreateProcurements() {
   return (
     <Card className="mx-4 px-10 py-10">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit as SubmitHandler<ItemsSchema>)}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit as SubmitHandler<ItemsSchema>)}
+        >
           <div className="grid w-full grid-cols-3 gap-4">
             <FormField
               control={form.control}
@@ -113,7 +115,11 @@ export default function CreateProcurements() {
                       type="date"
                       placeholder="Select date"
                       {...field}
-                      value={field.value ? new Date(field.value).toISOString().split("T")[0] : ""}
+                      value={
+                        field.value
+                          ? new Date(field.value).toISOString().split("T")[0]
+                          : ""
+                      }
                       onChange={(e) => field.onChange(new Date(e.target.value))}
                     />
                   </FormControl>
@@ -134,7 +140,9 @@ export default function CreateProcurements() {
                       step="0.01"
                       placeholder="Enter unit price"
                       {...field}
-                      onChange={(e) => field.onChange(parseFloat(e.target.value))}
+                      onChange={(e) =>
+                        field.onChange(parseFloat(e.target.value))
+                      }
                     />
                   </FormControl>
                   <FormMessage />
@@ -210,7 +218,10 @@ export default function CreateProcurements() {
                 </FormItem>
               )}
             />
-            <SubmitedButton text="Create Item" className="bg-gradient mt-6 w-full" />
+            <SubmitedButton
+              text="Create Item"
+              className="bg-gradient mt-6 w-full"
+            />
           </div>
         </form>
       </Form>

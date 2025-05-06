@@ -12,7 +12,9 @@ export function MaintenceCard() {
           <h1 className="text-2xl font-bold">Maintence</h1>
         </div>
         <Link href="/maintenance/add">
-          <Button className="bg-gradient h-[46px] w-full max-w-[180px]">Add Maintence</Button>
+          <Button className="bg-gradient h-[46px] w-full max-w-[180px]">
+            Add Maintence
+          </Button>
         </Link>
       </CardContent>
     </Card>

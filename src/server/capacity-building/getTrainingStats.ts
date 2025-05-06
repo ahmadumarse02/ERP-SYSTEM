@@ -18,7 +18,8 @@ export async function getTrainingStats() {
     });
 
     const totalStaff = await prisma.staff.count();
-    const trainingRate = totalStaff > 0 ? Math.round((totalStaffTrained / totalStaff) * 100) : 0;
+    const trainingRate =
+      totalStaff > 0 ? Math.round((totalStaffTrained / totalStaff) * 100) : 0;
 
     return {
       totalRequests,

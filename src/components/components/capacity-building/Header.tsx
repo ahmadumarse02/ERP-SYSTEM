@@ -12,7 +12,9 @@ export function CapacityBuildingCard() {
           <h1 className="text-2xl font-bold">Capacity building</h1>
         </div>
         <Link href="/capacity-building/add">
-          <Button className="bg-gradient h-[46px] w-full max-w-[180px]">Capacity building</Button>
+          <Button className="bg-gradient h-[46px] w-full max-w-[180px]">
+            Capacity building
+          </Button>
         </Link>
       </CardContent>
     </Card>

@@ -17,7 +17,10 @@ export function QuickSearchStaffCard() {
     <Card className="mb-10 w-full">
       <CardContent className="flex items-center justify-between">
         <div className="flex h-[50px] items-center justify-between rounded-lg border border-[#D0D0D0] px-3 py-1">
-          <input placeholder="Enter search word" className="border-none focus:outline-none" />
+          <input
+            placeholder="Enter search word"
+            className="border-none focus:outline-none"
+          />
           <Search className="mr-4" />
         </div>
         <div className="">
@@ -34,12 +37,16 @@ export function QuickSearchStaffCard() {
               <SelectItem value="all">All staff</SelectItem>
               <SelectItem value="active">Active staff</SelectItem>
               <SelectItem value="inactive">Inactive staff</SelectItem>
-              <SelectItem value="Human Resources">Human Resources staff</SelectItem>
+              <SelectItem value="Human Resources">
+                Human Resources staff
+              </SelectItem>
             </SelectContent>
           </Select>
         </div>
         <Link href="/staff/add">
-          <Button className="bg-gradient h-[46px] w-full max-w-[180px]">Add New Staff</Button>
+          <Button className="bg-gradient h-[46px] w-full max-w-[180px]">
+            Add New Staff
+          </Button>
         </Link>
       </CardContent>
     </Card>

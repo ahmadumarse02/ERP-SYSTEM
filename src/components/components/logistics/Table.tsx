@@ -40,8 +40,12 @@ export default async function LogisticsTable() {
           {logisticsData.map((request, i) => (
             <TableRow key={i}>
               <TableCell>{i + 1}</TableCell>
-              <TableCell className="max-w-[150px] truncate">{request.title}</TableCell>
-              <TableCell className="max-w-[150px] truncate">{request.purpose}</TableCell>
+              <TableCell className="max-w-[150px] truncate">
+                {request.title}
+              </TableCell>
+              <TableCell className="max-w-[150px] truncate">
+                {request.purpose}
+              </TableCell>
               <TableCell>
                 ₦
                 {request.amount.toLocaleString("en-NG", {
@@ -51,7 +55,9 @@ export default async function LogisticsTable() {
               </TableCell>
               <TableCell>{request.requestedBy}</TableCell>
               <TableCell>{request.sentTo}</TableCell>
-              <TableCell>{new Date(request.dateFrom).toLocaleDateString("en-GB")}</TableCell>
+              <TableCell>
+                {new Date(request.dateFrom).toLocaleDateString("en-GB")}
+              </TableCell>
               <TableCell>
                 <Badge
                   variant={

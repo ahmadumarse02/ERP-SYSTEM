@@ -1,7 +1,10 @@
 "use server";
 
 import prisma from "@/lib/prisma";
-import { maintenanceSchema, MaintenanceSchema } from "@/types/maintenance/maintenanceSchema";
+import {
+  maintenanceSchema,
+  MaintenanceSchema,
+} from "@/types/maintenance/maintenanceSchema";
 
 export async function createMaintenance(data: MaintenanceSchema) {
   const result = maintenanceSchema.safeParse(data);

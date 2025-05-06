@@ -68,9 +68,13 @@ export function BudgetTable() {
                 <TableCell>{budget.description}</TableCell>
                 <TableCell>{formatNumber(budget.budgetedAmount)}</TableCell>
                 <TableCell>
-                  {budget.actualAmount ? `${formatNumber(budget.actualAmount)}` : "-"}
+                  {budget.actualAmount
+                    ? `${formatNumber(budget.actualAmount)}`
+                    : "-"}
                 </TableCell>
-                <TableCell className={isPositive ? "text-green-600" : "text-red-600"}>
+                <TableCell
+                  className={isPositive ? "text-green-600" : "text-red-600"}
+                >
                   <div className="flex items-center">
                     {isPositive ? (
                       <Plus className="mr-1 h-4 w-4" />
@@ -82,7 +86,9 @@ export function BudgetTable() {
                     })}
                   </div>
                 </TableCell>
-                <TableCell>{new Date(budget.date).toLocaleDateString("en-GB")}</TableCell>
+                <TableCell>
+                  {new Date(budget.date).toLocaleDateString("en-GB")}
+                </TableCell>
               </TableRow>
             );
           })}

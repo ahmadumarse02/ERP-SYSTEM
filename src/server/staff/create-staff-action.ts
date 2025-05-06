@@ -1,7 +1,10 @@
 "use server";
 
 import prisma from "@/lib/prisma";
-import { staffFormSchema, StaffFormValues } from "@/types/staff/staffFormSchema";
+import {
+  staffFormSchema,
+  StaffFormValues,
+} from "@/types/staff/staffFormSchema";
 
 export async function createStaff(data: StaffFormValues) {
   const result = staffFormSchema.safeParse(data);

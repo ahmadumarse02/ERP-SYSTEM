@@ -24,7 +24,9 @@ export default function MaintenanceCalendar() {
   }, [currentMonth]);
 
   const hasMaintenance = (date: Date) => {
-    return maintenanceEvents.some((event) => isSameDay(new Date(event.scheduledDate), date));
+    return maintenanceEvents.some((event) =>
+      isSameDay(new Date(event.scheduledDate), date),
+    );
   };
 
   const dayContent = ({ date }: { date: Date }) => {
@@ -61,7 +63,8 @@ export default function MaintenanceCalendar() {
           nav_button_next: "absolute right-2",
           table: "w-full flex-1 border-collapse",
           head_row: "flex",
-          head_cell: "text-muted-foreground rounded-md w-12 font-normal text-sm",
+          head_cell:
+            "text-muted-foreground rounded-md w-12 font-normal text-sm",
           row: "flex w-full mt-1",
           cell: "h-12 w-12 text-center p-0 relative [&:has([aria-selected])]:bg-accent",
           day: "h-12 w-12 p-0 font-normal aria-selected:opacity-100 flex items-center justify-center",
@@ -70,7 +73,8 @@ export default function MaintenanceCalendar() {
           day_today: "bg-accent text-accent-foreground rounded-sm",
           day_outside: "text-muted-foreground opacity-50",
           day_disabled: "text-muted-foreground opacity-50",
-          day_range_middle: "aria-selected:bg-accent aria-selected:text-accent-foreground",
+          day_range_middle:
+            "aria-selected:bg-accent aria-selected:text-accent-foreground",
           day_hidden: "invisible",
         }}
       />

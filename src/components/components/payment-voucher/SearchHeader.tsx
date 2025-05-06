@@ -29,7 +29,9 @@ export function SearchHeader() {
               <SelectItem value="all">All staff</SelectItem>
               <SelectItem value="active">Active staff</SelectItem>
               <SelectItem value="inactive">Inactive staff</SelectItem>
-              <SelectItem value="Human Resources">Human Resources staff</SelectItem>
+              <SelectItem value="Human Resources">
+                Human Resources staff
+              </SelectItem>
             </SelectContent>
           </Select>
         </div>

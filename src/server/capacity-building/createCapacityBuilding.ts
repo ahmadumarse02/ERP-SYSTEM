@@ -34,6 +34,9 @@ export async function createTraining(data: CapacityBuildingValues) {
     return { success: true, message: "Training created successfully" };
   } catch (error) {
     console.error("Error creating staff:", error);
-    return { error: "Failed to create staff member", message: "Failed to create training" };
+    return {
+      error: "Failed to create staff member",
+      message: "Failed to create training",
+    };
   }
 }

@@ -12,7 +12,9 @@ function ProcurementsCard() {
           <h1 className="text-2xl font-bold">procurements</h1>
         </div>
         <Link href="/procurements/add">
-          <Button className="bg-gradient h-[46px] w-full max-w-[180px]">Add procurements</Button>
+          <Button className="bg-gradient h-[46px] w-full max-w-[180px]">
+            Add procurements
+          </Button>
         </Link>
       </CardContent>
     </Card>

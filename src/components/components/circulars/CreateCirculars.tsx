@@ -13,7 +13,10 @@ import { toast } from "sonner";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
-import { circularSchema, CircularSchema } from "@/types/circulars/circularsSchema";
+import {
+  circularSchema,
+  CircularSchema,
+} from "@/types/circulars/circularsSchema";
 import { Card } from "@/components/ui/card";
 import SubmitedButton from "@/components/shared/SubmitedButton";
 import { CreateCircular } from "@/server/circulars/create-circulars";
@@ -72,7 +75,11 @@ export default function CreateCirculars() {
                       type="date"
                       placeholder="Enter Date"
                       {...field}
-                      value={field.value ? new Date(field.value).toISOString().split("T")[0] : ""}
+                      value={
+                        field.value
+                          ? new Date(field.value).toISOString().split("T")[0]
+                          : ""
+                      }
                     />
                   </FormControl>
                   <FormMessage />
@@ -84,7 +91,9 @@ export default function CreateCirculars() {
               name="sendTo"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="block text-sm font-medium text-gray-700">send to</FormLabel>
+                  <FormLabel className="block text-sm font-medium text-gray-700">
+                    send to
+                  </FormLabel>
                   <FormControl>
                     <Input {...field} placeholder="Send To" className="mt-1" />
                   </FormControl>
@@ -101,7 +110,11 @@ export default function CreateCirculars() {
                     preparedBy
                   </FormLabel>
                   <FormControl>
-                    <Input {...field} placeholder="Prepared By" className="mt-1" />
+                    <Input
+                      {...field}
+                      placeholder="Prepared By"
+                      className="mt-1"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -112,7 +125,9 @@ export default function CreateCirculars() {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="block text-sm font-medium text-gray-700">message</FormLabel>
+                  <FormLabel className="block text-sm font-medium text-gray-700">
+                    message
+                  </FormLabel>
                   <FormControl>
                     <textarea
                       {...field}
@@ -124,7 +139,10 @@ export default function CreateCirculars() {
                 </FormItem>
               )}
             />
-            <SubmitedButton text="Create Vocture" className="bg-gradient mt-30 w-full" />
+            <SubmitedButton
+              text="Create Vocture"
+              className="bg-gradient mt-30 w-full"
+            />
           </div>
         </form>
       </Form>

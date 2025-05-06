@@ -3,7 +3,11 @@
 import Image from "next/image";
 import { useState } from "react";
 import { LogOut, Settings, User, ChevronDown } from "lucide-react";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import avatar from "@/assets/assets/avatar.jpg";
 
 interface HeaderProps {
@@ -21,7 +25,13 @@ const Header: React.FC<HeaderProps> = ({ title, description }) => {
         <p className="text-sm text-[#262626]">{description}</p>
       </div>
       <div className="relative flex items-center gap-2 rounded-lg p-2 transition hover:bg-gray-100">
-        <Image src={avatar} alt="User Avatar" width={40} height={40} className="rounded-full" />
+        <Image
+          src={avatar}
+          alt="User Avatar"
+          width={40}
+          height={40}
+          className="rounded-full"
+        />
         <div className="text-left">
           <p className="text-sm font-medium">Otor John</p>
           <p className="text-xs text-gray-500">HR Office</p>

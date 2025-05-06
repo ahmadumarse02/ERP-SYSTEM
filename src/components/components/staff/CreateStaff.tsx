@@ -13,7 +13,10 @@ import { toast } from "sonner";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
-import { staffFormSchema, StaffFormValues } from "@/types/staff/staffFormSchema";
+import {
+  staffFormSchema,
+  StaffFormValues,
+} from "@/types/staff/staffFormSchema";
 import { createStaff } from "@/server/staff/create-staff-action";
 import { Card } from "@/components/ui/card";
 import SubmitedButton from "@/components/shared/SubmitedButton";
@@ -70,14 +73,20 @@ export default function CreateNewStaff() {
                   <FormItem>
                     <FormLabel>Profile Image</FormLabel>
                     <FormControl>
-                      <ImageUploader value={field.value} onChange={field.onChange} />
+                      <ImageUploader
+                        value={field.value}
+                        onChange={field.onChange}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
 
-              <SubmitedButton text="Create staff" className="bg-gradient w-full" />
+              <SubmitedButton
+                text="Create staff"
+                className="bg-gradient w-full"
+              />
             </div>
 
             {/* Other inputs */}
@@ -117,7 +126,11 @@ export default function CreateNewStaff() {
                       Email address
                     </FormLabel>
                     <FormControl>
-                      <Input {...field} placeholder="Enter email address" className="mt-1" />
+                      <Input
+                        {...field}
+                        placeholder="Enter email address"
+                        className="mt-1"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -132,7 +145,11 @@ export default function CreateNewStaff() {
                       Phone number
                     </FormLabel>
                     <FormControl>
-                      <Input {...field} placeholder="Enter phone number" className="mt-1" />
+                      <Input
+                        {...field}
+                        placeholder="Enter phone number"
+                        className="mt-1"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -146,7 +163,10 @@ export default function CreateNewStaff() {
                     <FormLabel className="block text-sm font-medium text-gray-700">
                       Gender
                     </FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
                       <FormControl>
                         <SelectTrigger className="mt-1">
                           <SelectValue placeholder="Select gender" />
@@ -167,8 +187,13 @@ export default function CreateNewStaff() {
                 name="role"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="block text-sm font-medium text-gray-700">Role</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <FormLabel className="block text-sm font-medium text-gray-700">
+                      Role
+                    </FormLabel>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
                       <FormControl>
                         <SelectTrigger className="mt-1">
                           <SelectValue placeholder="Select role" />
@@ -193,7 +218,10 @@ export default function CreateNewStaff() {
                     <FormLabel className="block text-sm font-medium text-gray-700">
                       Designation
                     </FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
                       <FormControl>
                         <SelectTrigger className="mt-1">
                           <SelectValue placeholder="Select designation" />
@@ -219,7 +247,11 @@ export default function CreateNewStaff() {
                       Official email
                     </FormLabel>
                     <FormControl>
-                      <Input {...field} placeholder="Official Email" className="mt-1" />
+                      <Input
+                        {...field}
+                        placeholder="Official Email"
+                        className="mt-1"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -235,7 +267,11 @@ export default function CreateNewStaff() {
                       Staff ID
                     </FormLabel>
                     <FormControl>
-                      <Input {...field} placeholder="Staff ID" className="mt-1" />
+                      <Input
+                        {...field}
+                        placeholder="Staff ID"
+                        className="mt-1"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

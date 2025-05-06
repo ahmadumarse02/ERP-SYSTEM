@@ -1,6 +1,9 @@
 "use server";
 
-import { BudgetFormSchema, BudgetFormValues } from "@/types/office-budget/budgetSchema";
+import {
+  BudgetFormSchema,
+  BudgetFormValues,
+} from "@/types/office-budget/budgetSchema";
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 
@@ -43,8 +46,14 @@ export async function getBudgetSummary() {
   try {
     const budgets = await prisma.budget.findMany();
 
-    const totalBudgeted = budgets.reduce((sum, budget) => sum + budget.budgetedAmount, 0);
-    const totalActual = budgets.reduce((sum, budget) => sum + (budget.actualAmount || 0), 0);
+    const totalBudgeted = budgets.reduce(
+      (sum, budget) => sum + budget.budgetedAmount,
+      0,
+    );
+    const totalActual = budgets.reduce(
+      (sum, budget) => sum + (budget.actualAmount || 0),
+      0,
+    );
     const variance = totalBudgeted - totalActual;
     const percentageUsed = (totalActual / totalBudgeted) * 100;
 

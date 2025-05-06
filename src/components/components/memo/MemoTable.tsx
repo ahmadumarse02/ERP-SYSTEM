@@ -65,11 +65,17 @@ export function MemoTable() {
                 <TableCell>{memo.title}</TableCell>
                 <TableCell>{memo.sentFrom}</TableCell>
                 <TableCell>{memo.sentTo}</TableCell>
-                <TableCell>{new Date(memo.date).toLocaleDateString("en-GB")}</TableCell>
-                <TableCell>{memo.hasAttachment ? <p>Yes</p> : <p>No</p>}</TableCell>
+                <TableCell>
+                  {new Date(memo.date).toLocaleDateString("en-GB")}
+                </TableCell>
+                <TableCell>
+                  {memo.hasAttachment ? <p>Yes</p> : <p>No</p>}
+                </TableCell>
                 <TableCell>
                   {memo.action === "Received" ? (
-                    <span className="flex items-center text-green-500">Received</span>
+                    <span className="flex items-center text-green-500">
+                      Received
+                    </span>
                   ) : (
                     <span>Sent</span>
                   )}

@@ -7,7 +7,10 @@ import React from "react";
 function page() {
   return (
     <>
-      <Header title="Create Budget" description="Create and send budget request." />
+      <Header
+        title="Create Budget"
+        description="Create and send budget request."
+      />
       <BudgetCards />
       <BudgetHeader />
       <BudgetTable />

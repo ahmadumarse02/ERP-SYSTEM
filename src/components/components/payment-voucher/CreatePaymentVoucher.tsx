@@ -74,7 +74,11 @@ export default function CreatePaymenyVoucher() {
                       type="date"
                       placeholder="Enter Date"
                       {...field}
-                      value={field.value ? new Date(field.value).toISOString().split("T")[0] : ""}
+                      value={
+                        field.value
+                          ? new Date(field.value).toISOString().split("T")[0]
+                          : ""
+                      }
                     />
                   </FormControl>
                   <FormMessage />
@@ -86,7 +90,9 @@ export default function CreatePaymenyVoucher() {
               name="sendTo"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="block text-sm font-medium text-gray-700">send to</FormLabel>
+                  <FormLabel className="block text-sm font-medium text-gray-700">
+                    send to
+                  </FormLabel>
                   <FormControl>
                     <Input {...field} placeholder="Send To" className="mt-1" />
                   </FormControl>
@@ -103,7 +109,11 @@ export default function CreatePaymenyVoucher() {
                     preparedBy
                   </FormLabel>
                   <FormControl>
-                    <Input {...field} placeholder="Prepared By" className="mt-1" />
+                    <Input
+                      {...field}
+                      placeholder="Prepared By"
+                      className="mt-1"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

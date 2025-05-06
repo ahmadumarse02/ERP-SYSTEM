@@ -12,7 +12,9 @@ export function StocksCard() {
           <h1 className="text-2xl font-bold">stocks-inventory</h1>
         </div>
         <Link href="/stocks-inventory/add">
-          <Button className="bg-gradient h-[46px] w-full max-w-[180px]">Add New Stock</Button>
+          <Button className="bg-gradient h-[46px] w-full max-w-[180px]">
+            Add New Stock
+          </Button>
         </Link>
       </CardContent>
     </Card>

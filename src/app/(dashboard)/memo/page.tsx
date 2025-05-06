@@ -6,7 +6,10 @@ import React from "react";
 function page() {
   return (
     <>
-      <Header title="Create Memo" description="Create and send memos to designated offices." />
+      <Header
+        title="Create Memo"
+        description="Create and send memos to designated offices."
+      />
       <MemoHeader />
       <MemoTable />
     </>

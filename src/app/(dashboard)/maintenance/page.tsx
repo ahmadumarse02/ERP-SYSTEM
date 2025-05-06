@@ -7,7 +7,10 @@ import React from "react";
 function page() {
   return (
     <>
-      <Header title="Maintenance" description="View and create schedule for maintenance" />
+      <Header
+        title="Maintenance"
+        description="View and create schedule for maintenance"
+      />
       <MaintenceCard />
       <MaintenanceDashboard />
       <div className="">

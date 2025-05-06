@@ -7,7 +7,10 @@ import React from "react";
 function page() {
   return (
     <>
-      <Header title="Stocks and Inventory" description="Update stoke and inventory table" />
+      <Header
+        title="Stocks and Inventory"
+        description="Update stoke and inventory table"
+      />
       <StatsOverview />
       <StocksCard />
       <StockTable />

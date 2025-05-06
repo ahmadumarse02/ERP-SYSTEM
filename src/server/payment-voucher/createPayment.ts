@@ -11,7 +11,10 @@ export async function createPaymentVocture(data: PaymentVoucherInput) {
   const result = paymentVoucherSchema.safeParse(data);
 
   if (!result.success) {
-    return { error: "Failed to create PaymentVocture", details: result.error.format() };
+    return {
+      error: "Failed to create PaymentVocture",
+      details: result.error.format(),
+    };
   }
 
   try {

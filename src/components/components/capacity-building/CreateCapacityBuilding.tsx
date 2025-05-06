@@ -94,7 +94,11 @@ export default function CreateTraining() {
                     <Input
                       type="date"
                       {...field}
-                      value={field.value ? new Date(field.value).toISOString().split("T")[0] : ""}
+                      value={
+                        field.value
+                          ? new Date(field.value).toISOString().split("T")[0]
+                          : ""
+                      }
                       onChange={(e) => field.onChange(new Date(e.target.value))}
                       className="w-full"
                     />
@@ -110,7 +114,10 @@ export default function CreateTraining() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Type</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
                     <FormControl>
                       <SelectTrigger className="w-full">
                         <SelectValue placeholder="Select type" />
@@ -133,7 +140,10 @@ export default function CreateTraining() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Status</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
                     <FormControl>
                       <SelectTrigger className="w-full">
                         <SelectValue placeholder="Select status" />
@@ -157,7 +167,10 @@ export default function CreateTraining() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Mode</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
                     <FormControl>
                       <SelectTrigger className="w-full">
                         <SelectValue placeholder="Select mode" />
@@ -180,7 +193,10 @@ export default function CreateTraining() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Duration</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
                     <FormControl>
                       <SelectTrigger className="w-full">
                         <SelectValue placeholder="Select duration" />
@@ -203,7 +219,10 @@ export default function CreateTraining() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Staff Members</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
                     <FormControl>
                       <SelectTrigger className="w-full">
                         <SelectValue placeholder="Select staff" />
@@ -222,7 +241,10 @@ export default function CreateTraining() {
               )}
             />
 
-            <SubmitedButton text="Create Training" className="bg-gradient mt-6 w-full" />
+            <SubmitedButton
+              text="Create Training"
+              className="bg-gradient mt-6 w-full"
+            />
           </div>
         </form>
       </Form>

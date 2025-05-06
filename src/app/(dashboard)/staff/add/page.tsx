@@ -5,7 +5,10 @@ import React from "react";
 function page() {
   return (
     <>
-      <Header title="All Staff" description="View, search for and add new staff" />
+      <Header
+        title="All Staff"
+        description="View, search for and add new staff"
+      />
       <CreateNewStaff />
     </>
   );

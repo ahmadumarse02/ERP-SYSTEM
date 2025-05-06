@@ -29,15 +29,21 @@ function SearchHeader({
       {(titleNumber || titleHeading) && (
         <div className="mb-6 flex items-center justify-between">
           <div className="flex items-center">
-            {titleNumber && <h1 className="mr-2 text-2xl font-bold">{titleNumber}</h1>}
-            {titleHeading && <h2 className="text-lg text-gray-600">{titleHeading}</h2>}
+            {titleNumber && (
+              <h1 className="mr-2 text-2xl font-bold">{titleNumber}</h1>
+            )}
+            {titleHeading && (
+              <h2 className="text-lg text-gray-600">{titleHeading}</h2>
+            )}
           </div>
         </div>
       )}
 
       {searchLabel && (
         <div className="mb-4">
-          <h3 className="mb-1 text-sm font-medium text-gray-700">{searchLabel}</h3>
+          <h3 className="mb-1 text-sm font-medium text-gray-700">
+            {searchLabel}
+          </h3>
           <input
             type="text"
             placeholder={searchPlaceholder}
@@ -49,7 +55,11 @@ function SearchHeader({
       {buttonLabel && (
         <div className="">
           <Button size="lg" className="bg-gradient my-auto w-full text-white">
-            {buttonHref ? <Link href={buttonHref}>{buttonLabel}</Link> : <span>{buttonLabel}</span>}
+            {buttonHref ? (
+              <Link href={buttonHref}>{buttonLabel}</Link>
+            ) : (
+              <span>{buttonLabel}</span>
+            )}
           </Button>
         </div>
       )}

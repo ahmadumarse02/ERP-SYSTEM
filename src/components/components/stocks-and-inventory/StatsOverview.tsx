@@ -20,7 +20,10 @@ export function StatsOverview() {
     return (
       <div className="mb-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
         {[...Array(4)].map((_, i) => (
-          <div key={i} className="h-32 animate-pulse rounded-lg bg-gray-100"></div>
+          <div
+            key={i}
+            className="h-32 animate-pulse rounded-lg bg-gray-100"
+          ></div>
         ))}
       </div>
     );

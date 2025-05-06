@@ -65,7 +65,9 @@ export function PaymentVoucherTable() {
               <TableRow key={voucher.id}>
                 <TableCell className="font-medium">{index + 1}</TableCell>
                 <TableCell>{voucher.subject}</TableCell>
-                <TableCell>{format(new Date(voucher.Date), "dd/MM/yyyy")}</TableCell>
+                <TableCell>
+                  {format(new Date(voucher.Date), "dd/MM/yyyy")}
+                </TableCell>
                 <TableCell>{voucher.preparedBy}</TableCell>
                 <TableCell>{voucher.sendTo}</TableCell>
               </TableRow>

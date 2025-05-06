@@ -2,7 +2,10 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { maintenanceSchema, MaintenanceSchema } from "@/types/maintenance/maintenanceSchema";
+import {
+  maintenanceSchema,
+  MaintenanceSchema,
+} from "@/types/maintenance/maintenanceSchema";
 import {
   Form,
   FormControl,
@@ -16,7 +19,11 @@ import { createMaintenance } from "@/server/maintenance/createMaintenance";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 import {
@@ -68,7 +75,10 @@ export default function CreateMaintenance() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Item name</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
                   <FormControl>
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Select item" />
@@ -92,7 +102,10 @@ export default function CreateMaintenance() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Maintenance type</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
                   <FormControl>
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Select option" />
@@ -174,7 +187,9 @@ export default function CreateMaintenance() {
                         className="w-full justify-start text-left font-normal"
                       >
                         <CalendarIcon className="mr-2 h-4 w-4" />
-                        {field.value ? format(new Date(field.value), "dd/MM/yyyy") : "DD/MM/YYYY"}
+                        {field.value
+                          ? format(new Date(field.value), "dd/MM/yyyy")
+                          : "DD/MM/YYYY"}
                       </Button>
                     </FormControl>
                   </PopoverTrigger>
@@ -198,7 +213,10 @@ export default function CreateMaintenance() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Status</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
                   <FormControl>
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Select status" />
@@ -215,7 +233,10 @@ export default function CreateMaintenance() {
             )}
           />
 
-          <SubmitedButton text=" Schedule Maintenance" className="bg-gradient w-full" />
+          <SubmitedButton
+            text=" Schedule Maintenance"
+            className="bg-gradient w-full"
+          />
         </form>
       </Form>
     </div>

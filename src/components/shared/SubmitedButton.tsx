@@ -29,7 +29,11 @@ function SubmitedButton({ text, className, variant }: iAppProps) {
           Please wait
         </Button>
       ) : (
-        <Button variant={variant} className={cn("w-fit", className)} type="submit">
+        <Button
+          variant={variant}
+          className={cn("w-fit", className)}
+          type="submit"
+        >
           {text}
         </Button>
       )}

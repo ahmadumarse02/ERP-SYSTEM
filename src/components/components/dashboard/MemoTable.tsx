@@ -60,7 +60,9 @@ export function MemoTable() {
               <TableCell>{memo.sentTo}</TableCell>
               <TableCell>
                 {memo.action === "Received" ? (
-                  <span className="flex items-center text-green-500">Received</span>
+                  <span className="flex items-center text-green-500">
+                    Received
+                  </span>
                 ) : (
                   <span>Sent</span>
                 )}

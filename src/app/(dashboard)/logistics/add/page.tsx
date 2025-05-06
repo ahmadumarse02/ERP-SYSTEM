@@ -5,7 +5,10 @@ import React from "react";
 function page() {
   return (
     <>
-      <Header title="Logistics request" description="Make and send logistics request." />
+      <Header
+        title="Logistics request"
+        description="Make and send logistics request."
+      />
       <CreateLogisticsRequest />
     </>
   );

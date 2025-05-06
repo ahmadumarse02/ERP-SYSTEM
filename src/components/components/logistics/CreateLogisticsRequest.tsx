@@ -2,7 +2,10 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { logisticsRequestSchema, LogisticsRequestSchema } from "@/types/logistics/logisticsSchema";
+import {
+  logisticsRequestSchema,
+  LogisticsRequestSchema,
+} from "@/types/logistics/logisticsSchema";
 import {
   Form,
   FormControl,
@@ -17,7 +20,11 @@ import { createLogisticsRequest } from "@/server/logistics/createLogisticsReques
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 import {
@@ -60,7 +67,9 @@ export default function CreateLogisticsRequest() {
     <div className="space-y-6 rounded-md bg-white px-10 py-10 shadow-sm">
       <div className="space-y-2">
         <h1 className="text-2xl font-bold">Logistics Request</h1>
-        <p className="text-gray-500">Kindly fill in the form below to submit a logistics request</p>
+        <p className="text-gray-500">
+          Kindly fill in the form below to submit a logistics request
+        </p>
       </div>
 
       <Form {...form}>
@@ -117,7 +126,9 @@ export default function CreateLogisticsRequest() {
                     <PopoverContent className="w-auto p-0">
                       <Calendar
                         mode="single"
-                        selected={field.value ? new Date(field.value) : undefined}
+                        selected={
+                          field.value ? new Date(field.value) : undefined
+                        }
                         onSelect={(date) => field.onChange(date?.toISOString())}
                         initialFocus
                       />
@@ -151,7 +162,9 @@ export default function CreateLogisticsRequest() {
                     <PopoverContent className="w-auto p-0">
                       <Calendar
                         mode="single"
-                        selected={field.value ? new Date(field.value) : undefined}
+                        selected={
+                          field.value ? new Date(field.value) : undefined
+                        }
                         onSelect={(date) => field.onChange(date?.toISOString())}
                         initialFocus
                       />
@@ -200,14 +213,19 @@ export default function CreateLogisticsRequest() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Sent to</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue placeholder="Select option" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="finance">Finance Department</SelectItem>
+                      <SelectItem value="finance">
+                        Finance Department
+                      </SelectItem>
                       <SelectItem value="operations">Operations</SelectItem>
                       <SelectItem value="management">Management</SelectItem>
                     </SelectContent>
@@ -228,7 +246,9 @@ export default function CreateLogisticsRequest() {
                       type="number"
                       placeholder="Enter amount in #"
                       {...field}
-                      onChange={(e) => field.onChange(parseFloat(e.target.value))}
+                      onChange={(e) =>
+                        field.onChange(parseFloat(e.target.value))
+                      }
                     />
                   </FormControl>
                   <FormMessage />
@@ -242,7 +262,10 @@ export default function CreateLogisticsRequest() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Status</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue placeholder="Select status" />
@@ -259,7 +282,10 @@ export default function CreateLogisticsRequest() {
               )}
             />
 
-            <SubmitedButton text=" Submit Request" className="bg-gradient w-full"></SubmitedButton>
+            <SubmitedButton
+              text=" Submit Request"
+              className="bg-gradient w-full"
+            ></SubmitedButton>
           </div>
         </form>
       </Form>

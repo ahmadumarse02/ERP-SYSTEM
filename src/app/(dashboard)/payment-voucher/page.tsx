@@ -5,7 +5,10 @@ import Header from "@/components/layout/Header";
 function page() {
   return (
     <>
-      <Header title="Payment Voucher" description="Create account for a new staff" />
+      <Header
+        title="Payment Voucher"
+        description="Create account for a new staff"
+      />
       <SearchHeader />
       <PaymentVoucherTable />
     </>

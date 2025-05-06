@@ -28,7 +28,12 @@ const ImageUpload = ({ value, onChange, className }: ImageUploadProps) => {
     >
       <div className="relative mb-4 h-32 w-32 overflow-hidden rounded-full border-2 border-dashed border-gray-300 bg-gray-100">
         {imageUrl ? (
-          <Image src={imageUrl} alt="Uploaded preview" fill className="object-cover" />
+          <Image
+            src={imageUrl}
+            alt="Uploaded preview"
+            fill
+            className="object-cover"
+          />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center text-gray-400">
             <Camera className="size-10" />

@@ -20,21 +20,30 @@ export default async function CircularsTable() {
         <TableCaption>A list of all circulars.</TableCaption>
         <TableHeader>
           <TableRow>
-            {["S/N", "Circular Title", "Sent From", "Sent To", "Date", "Action"].map(
-              (header, i) => (
-                <TableHead key={i}>{header}</TableHead>
-              ),
-            )}
+            {[
+              "S/N",
+              "Circular Title",
+              "Sent From",
+              "Sent To",
+              "Date",
+              "Action",
+            ].map((header, i) => (
+              <TableHead key={i}>{header}</TableHead>
+            ))}
           </TableRow>
         </TableHeader>
         <TableBody>
           {circularsData.map((circular, i) => (
             <TableRow key={i}>
               <TableCell>{i + 1}</TableCell>
-              <TableCell className="max-w-[200px] truncate">{circular.subject}</TableCell>
+              <TableCell className="max-w-[200px] truncate">
+                {circular.subject}
+              </TableCell>
               <TableCell>{circular.preparedBy}</TableCell>
               <TableCell>{circular.sendTo}</TableCell>
-              <TableCell>{new Date(circular.Date).toLocaleDateString("en-GB")}</TableCell>
+              <TableCell>
+                {new Date(circular.Date).toLocaleDateString("en-GB")}
+              </TableCell>
               <TableCell>
                 <Link href="/circulars" className="flex items-center">
                   View more

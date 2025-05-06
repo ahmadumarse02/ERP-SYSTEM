@@ -2,7 +2,10 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { stockSchema, StockValues } from "@/types/stocks-and-inventory/stockSchema";
+import {
+  stockSchema,
+  StockValues,
+} from "@/types/stocks-and-inventory/stockSchema";
 import {
   Form,
   FormControl,
@@ -74,8 +77,11 @@ export default function CreateStockForm() {
       </div>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="grid grid-cols-2">
-          <div className="w-[331px] border py-8 px-10 rounded-lg">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="grid grid-cols-2"
+        >
+          <div className="w-[331px] rounded-lg border px-10 py-8">
             <FormField
               control={form.control}
               name="image"
@@ -83,43 +89,49 @@ export default function CreateStockForm() {
                 <FormItem>
                   <FormLabel className="text-center">Profile Image</FormLabel>
                   <FormControl>
-                    <ImageUploader value={field.value} onChange={field.onChange} />
+                    <ImageUploader
+                      value={field.value}
+                      onChange={field.onChange}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
 
-            <SubmitedButton text="Create staff" className="bg-gradient w-full" />
+            <SubmitedButton
+              text="Create staff"
+              className="bg-gradient w-full"
+            />
           </div>
-        <div className="w-full grid grid-cols-2 gap-4">
-          <FormField
-            control={form.control}
-            name="productName"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Product name</FormLabel>
-                <FormControl>
-                  <Input placeholder="Enter product name" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <div className="grid w-full grid-cols-2 gap-4">
+            <FormField
+              control={form.control}
+              name="productName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Product name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Enter product name" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-          <FormField
-            control={form.control}
-            name="category"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Category</FormLabel>
-                <FormControl>
-                  <Input placeholder="Select category" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+            <FormField
+              control={form.control}
+              name="category"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Category</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Select category" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
             <FormField
               control={form.control}
@@ -132,7 +144,9 @@ export default function CreateStockForm() {
                       type="number"
                       placeholder="Enter amount"
                       {...field}
-                      onChange={(e) => field.onChange(parseFloat(e.target.value))}
+                      onChange={(e) =>
+                        field.onChange(parseFloat(e.target.value))
+                      }
                     />
                   </FormControl>
                   <FormMessage />
@@ -213,7 +227,12 @@ export default function CreateStockForm() {
                 <FormItem>
                   <FormLabel>Total amount</FormLabel>
                   <FormControl>
-                    <Input type="number" placeholder="Amount" {...field} readOnly />
+                    <Input
+                      type="number"
+                      placeholder="Amount"
+                      {...field}
+                      readOnly
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

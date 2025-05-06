@@ -6,7 +6,10 @@ import React from "react";
 function page() {
   return (
     <>
-      <Header title="Circulars" description="Search for  and view all circulars" />
+      <Header
+        title="Circulars"
+        description="Search for  and view all circulars"
+      />
       <CircularHeader />
       <CircularsTable />
     </>

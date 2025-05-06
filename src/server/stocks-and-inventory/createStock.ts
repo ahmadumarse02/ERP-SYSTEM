@@ -1,7 +1,10 @@
 "use server";
 
 import prisma from "@/lib/prisma";
-import { StockValues, stockSchema } from "@/types/stocks-and-inventory/stockSchema";
+import {
+  StockValues,
+  stockSchema,
+} from "@/types/stocks-and-inventory/stockSchema";
 
 export async function createStockItem(data: StockValues) {
   const result = stockSchema.safeParse(data);
