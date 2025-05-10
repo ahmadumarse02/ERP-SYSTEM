@@ -1,6 +1,7 @@
 "use client";
 
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
+import { useEffect, useState } from "react";
 
 const COLORS = {
   Pending: "#f59e0b",
@@ -17,10 +18,24 @@ export type LogisticsStats = {
 };
 
 function LogisticsChart({ stats }: { stats?: LogisticsStats }) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   if (!stats) {
     return (
       <div className="mx-auto flex h-[300px] w-full max-w-3xl items-center justify-center rounded-xl bg-white p-6 shadow-md">
         <p>Loading statistics...</p>
+      </div>
+    );
+  }
+
+  if (!isMounted) {
+    return (
+      <div className="mx-auto h-[327px] w-full max-w-3xl rounded-xl bg-white p-6 shadow-md">
+        {/* Empty placeholder with same dimensions */}
       </div>
     );
   }
@@ -64,4 +79,3 @@ function LogisticsChart({ stats }: { stats?: LogisticsStats }) {
 }
 
 export default LogisticsChart;
-export const revalidate = 0;
