@@ -1,3 +1,5 @@
+"use client"
+
 import { getAllStaffData } from "@/server/staff/getall-staff-action";
 import {
   Table,
