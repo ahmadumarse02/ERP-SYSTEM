@@ -15,3 +15,5 @@ function page() {
 }
 
 export default page;
+
+export const revalidate = 0;
