@@ -38,3 +38,5 @@ export default async function StaffTable() {
     </div>
   );
 }
+
+export const revalidate = 0;
