@@ -1,5 +1,3 @@
-"use client"
-
 import { getAllLogistics } from "@/server/logistics/getAllLogistics";
 import {
   Table,
@@ -93,4 +91,4 @@ export default async function LogisticsTable() {
   );
 }
 
-export const revalidate = 0;
+// export const revalidate = 0;
