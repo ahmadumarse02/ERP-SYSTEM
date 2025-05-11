@@ -12,27 +12,9 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { RequestStatus } from "@prisma/client";
 
 export default async function LogisticsTable() {
-  const [data, setData] = useState<{ 
-    id: string; 
-    title: string; 
-    requestedBy: string; 
-    dateFrom: Date; 
-    purpose: string; 
-    sentTo: string; 
-    amount: number; 
-    status: RequestStatus; 
-  }[]>([])
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getAllLogistics()
-      setData(data)
-    }
-    fetchData()
-  })
+  const logisticsData = await getAllLogistics();
 
   return (
     <div className="mt-10 h-[650px] overflow-y-auto rounded-md bg-white p-4 shadow-md">
@@ -57,7 +39,7 @@ export default async function LogisticsTable() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data.map((request, i) => (
+          {logisticsData.map((request, i) => (
             <TableRow key={i}>
               <TableCell>{i + 1}</TableCell>
               <TableCell className="max-w-[150px] truncate">
