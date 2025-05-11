@@ -79,3 +79,5 @@ function LogisticsChart({ stats }: { stats?: LogisticsStats }) {
 }
 
 export default LogisticsChart;
+
+export const revalidate = 0;
