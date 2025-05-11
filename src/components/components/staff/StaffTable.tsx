@@ -12,15 +12,7 @@ import {
 
 
 interface StaffTableProps {
-  initialData: Array<{
-    firstName: string;
-    lastName: string;
-    gender: string;
-    staffId: string;
-    phone: string;
-    role: string;
-    designation: string;
-  }>;
+  initialData: any[];
 }
 
 export default function StaffTable({initialData}: StaffTableProps) {
