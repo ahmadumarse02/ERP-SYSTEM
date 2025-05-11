@@ -13,7 +13,12 @@ async function page() {
         description="View, search for and add new staff"
       />
       <QuickSearchStaffCard />
-      <StaffTable initialData={staffData} />;
+      <StaffTable
+        initialData={staffData.map((staff) => ({
+          ...staff,
+          staffId: staff.staffId || "",
+        }))}
+      />;
     </>
   );
 }
