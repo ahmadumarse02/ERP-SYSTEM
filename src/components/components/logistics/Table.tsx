@@ -1,3 +1,5 @@
+"use client"
+
 import { getAllLogistics } from "@/server/logistics/getAllLogistics";
 import {
   Table,
