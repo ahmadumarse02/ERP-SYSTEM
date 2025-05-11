@@ -56,6 +56,7 @@ export default function CreateNewStaff() {
     } else {
       toast.success("Staff member created successfully");
       router.push("/staff");
+      router.refresh(); 
     }
   };
 

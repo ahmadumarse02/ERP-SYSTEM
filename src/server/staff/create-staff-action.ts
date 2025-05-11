@@ -28,6 +28,7 @@ export async function createStaff(data: StaffFormValues) {
         imageUrl: result.data.imageUrl || null,
       },
     });
+    return { success: true };
   } catch (error) {
     console.error("Error creating staff", error);
     return { error: "Failed to create staff member" };

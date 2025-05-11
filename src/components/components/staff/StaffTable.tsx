@@ -1,6 +1,5 @@
 "use client";
 
-import { getAllStaffData } from "@/server/staff/getall-staff-action";
 import {
   Table,
   TableBody,
@@ -11,8 +10,12 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-export default async function StaffTable() {
-  const staffData = await getAllStaffData();
+
+interface StaffTableProps {
+  initialData: any[];
+}
+
+export default function StaffTable({initialData}: StaffTableProps) {
 
   return (
     <div className="h-[650px] overflow-y-auto rounded-md bg-white p-4 shadow-md">
@@ -36,7 +39,7 @@ export default async function StaffTable() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {staffData.map((staff, i) => (
+          {initialData.map((staff, i) => (
             <TableRow key={i}>
               <TableCell>{i + 1}</TableCell>
               <TableCell>{staff.firstName}</TableCell>
@@ -53,5 +56,3 @@ export default async function StaffTable() {
     </div>
   );
 }
-
-export const revalidate = 0;

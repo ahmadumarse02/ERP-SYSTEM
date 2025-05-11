@@ -9,7 +9,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useUser, useClerk } from "@clerk/nextjs";
-import avatar from "@/assets/assets/avatar.jpg";
+import avatar from "@/assets/assets/avatar.jpg"
 
 interface HeaderProps {
   title: string;
@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ title, description }) => {
       </div>
       <div className="relative flex items-center gap-2 rounded-lg p-2 transition hover:bg-gray-100">
         <Image
-          src={user?.imageUrl || avatar}
+          src={user?.imageUrl as string || avatar}
           alt="User Avatar"
           width={40}
           height={40}
@@ -46,9 +46,9 @@ const Header: React.FC<HeaderProps> = ({ title, description }) => {
           priority
         />
         <div className="text-left">
-          <p className="text-sm font-medium">{user?.fullName || "Otor John"}</p>
+          <p className="text-sm font-medium">{user?.fullName}</p>
           <p className="text-xs text-gray-500">
-            {user?.primaryEmailAddress?.emailAddress || "HR Office"}
+            {user?.primaryEmailAddress?.emailAddress}
           </p>
         </div>
 
