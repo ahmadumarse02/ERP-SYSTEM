@@ -12,8 +12,15 @@ import {
 
 
 interface StaffTableProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  initialData: any[];
+  initialData: Array<{
+    firstName: string;
+    lastName: string;
+    gender: string;
+    staffId: string;
+    phone: string;
+    role: string;
+    designation: string;
+  }>;
 }
 
 
