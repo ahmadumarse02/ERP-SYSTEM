@@ -28,6 +28,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+export const dynamic = "force-dynamic";
+
 export default function CreateTraining() {
   const router = useRouter();
 
