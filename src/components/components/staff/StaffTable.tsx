@@ -12,8 +12,10 @@ import {
 
 
 interface StaffTableProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   initialData: any[];
 }
+
 
 export default function StaffTable({initialData}: StaffTableProps) {
 
