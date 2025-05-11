@@ -285,7 +285,8 @@ export default function CreateLogisticsRequest() {
             <SubmitedButton
               text=" Submit Request"
               className="bg-gradient w-full"
-            ></SubmitedButton>
+              isSubmitting={form.formState.isSubmitting}
+            />
           </div>
         </form>
       </Form>

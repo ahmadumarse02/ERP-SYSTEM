@@ -1,5 +1,11 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+} from '@clerk/nextjs'
 
 export default function Hero() {
   return (
@@ -14,7 +20,8 @@ export default function Hero() {
         </div>
 
         <nav className="hidden md:flex md:justify-end md:space-x-4">
-          <Button variant="secondary">Sign in</Button>
+          {/* <Button variant="secondary"></Button> */}
+          <SignInButton>Sign in</SignInButton>
           <Button>Sign up</Button>
         </nav>
       </div>

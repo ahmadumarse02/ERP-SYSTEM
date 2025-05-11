@@ -187,6 +187,7 @@ export function BudgetForm() {
           <SubmitedButton
             text="Create Budget"
             className="bg-gradient mt-6 w-full max-w-40"
+            isSubmitting={form.formState.isSubmitting}
           />
         </form>
       </Form>

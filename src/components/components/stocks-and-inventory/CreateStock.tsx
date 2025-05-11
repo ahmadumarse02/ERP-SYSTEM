@@ -102,6 +102,7 @@ export default function CreateStockForm() {
             <SubmitedButton
               text="Create staff"
               className="bg-gradient w-full"
+              isSubmitting={form.formState.isSubmitting}
             />
           </div>
           <div className="grid w-full grid-cols-2 gap-4">

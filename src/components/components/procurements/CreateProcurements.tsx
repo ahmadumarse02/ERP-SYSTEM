@@ -221,6 +221,7 @@ export default function CreateProcurements() {
             <SubmitedButton
               text="Create Item"
               className="bg-gradient mt-6 w-full"
+              isSubmitting={form.formState.isSubmitting}
             />
           </div>
         </form>

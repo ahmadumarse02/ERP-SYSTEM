@@ -142,6 +142,7 @@ export default function CreateCirculars() {
             <SubmitedButton
               text="Create Vocture"
               className="bg-gradient mt-30 w-full"
+              isSubmitting={form.formState.isSubmitting}
             />
           </div>
         </form>

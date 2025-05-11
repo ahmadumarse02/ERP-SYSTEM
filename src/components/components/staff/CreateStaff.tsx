@@ -86,6 +86,7 @@ export default function CreateNewStaff() {
               <SubmitedButton
                 text="Create staff"
                 className="bg-gradient w-full"
+                isSubmitting={form.formState.isSubmitting}
               />
             </div>
 

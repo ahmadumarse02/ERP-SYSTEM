@@ -119,7 +119,7 @@ export default function CreatePaymenyVoucher() {
                 </FormItem>
               )}
             />
-            <SubmitedButton text="Create Vocture" className="bg-gradient" />
+            <SubmitedButton text="Create Vocture" className="bg-gradient" isSubmitting={form.formState.isSubmitting} />
           </div>
         </form>
       </Form>

@@ -236,6 +236,7 @@ export default function CreateMaintenance() {
           <SubmitedButton
             text=" Schedule Maintenance"
             className="bg-gradient w-full"
+            isSubmitting={form.formState.isSubmitting}
           />
         </form>
       </Form>

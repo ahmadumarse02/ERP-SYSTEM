@@ -1,43 +1,41 @@
 "use client";
 
-import { useFormStatus } from "react-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
 
 interface iAppProps {
   text: string;
+  isSubmitting?: boolean;
   className?: string;
   variant?:
-    | "default"
-    | "destructive"
-    | "outline"
-    | "secondary"
-    | "ghost"
-    | "link"
-    | null
-    | undefined;
+  | "default"
+  | "destructive"
+  | "outline"
+  | "secondary"
+  | "ghost"
+  | "link"
+  | null
+  | undefined;
 }
 
-function SubmitedButton({ text, className, variant }: iAppProps) {
-  const { pending } = useFormStatus();
+function SubmitedButton({ text, isSubmitting, className, variant }: iAppProps) {
   return (
-    <>
-      {pending ? (
-        <Button disabled className={cn("w-fit", className)} variant={variant}>
-          <Loader2 className="mr-2 size-2 animate-spin" />
+    <Button
+      disabled={isSubmitting}
+      variant={variant}
+      className={cn("w-fit", className)}
+      type="submit"
+    >
+      {isSubmitting ? (
+        <>
+          <Loader2 className="mr-2 size-4 animate-spin" />
           Please wait
-        </Button>
+        </>
       ) : (
-        <Button
-          variant={variant}
-          className={cn("w-fit", className)}
-          type="submit"
-        >
-          {text}
-        </Button>
+        text
       )}
-    </>
+    </Button>
   );
 }
 
