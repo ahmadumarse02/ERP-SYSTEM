@@ -1,11 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-} from '@clerk/nextjs'
+import { SignInButton, SignUpButton, SignedIn, SignedOut } from "@clerk/nextjs";
 
 export default function Hero() {
   return (

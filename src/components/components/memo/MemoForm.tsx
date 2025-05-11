@@ -267,7 +267,11 @@ export function MemoForm() {
             >
               Cancel
             </Button>
-            <SubmitedButton text="Create Memo" className="bg-gradient" isSubmitting={form.formState.isSubmitting} />
+            <SubmitedButton
+              text="Create Memo"
+              className="bg-gradient"
+              isSubmitting={form.formState.isSubmitting}
+            />
           </div>
         </form>
       </Form>

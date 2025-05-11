@@ -46,9 +46,7 @@ const Header: React.FC<HeaderProps> = ({ title, description }) => {
           priority
         />
         <div className="text-left">
-          <p className="text-sm font-medium">
-            {user?.fullName || "Otor John"}
-          </p>
+          <p className="text-sm font-medium">{user?.fullName || "Otor John"}</p>
           <p className="text-xs text-gray-500">
             {user?.primaryEmailAddress?.emailAddress || "HR Office"}
           </p>

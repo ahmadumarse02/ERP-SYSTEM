@@ -9,14 +9,14 @@ interface iAppProps {
   isSubmitting?: boolean;
   className?: string;
   variant?:
-  | "default"
-  | "destructive"
-  | "outline"
-  | "secondary"
-  | "ghost"
-  | "link"
-  | null
-  | undefined;
+    | "default"
+    | "destructive"
+    | "outline"
+    | "secondary"
+    | "ghost"
+    | "link"
+    | null
+    | undefined;
 }
 
 function SubmitedButton({ text, isSubmitting, className, variant }: iAppProps) {
